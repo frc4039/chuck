@@ -7,7 +7,7 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 /**
@@ -17,8 +17,8 @@ public class Winch extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  private Victor Winch1 = new Victor(RobotMap.WinchDrive1);
-  private Victor Winch2 = new Victor(RobotMap.WinchDrive2);
+  private Talon Winch1 = new Talon(RobotMap.WinchDrive1);
+  private Talon Winch2 = new Talon(RobotMap.WinchDrive2);
 
 
   public void Winch(){

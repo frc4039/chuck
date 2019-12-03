@@ -17,8 +17,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Pneumatics extends Subsystem {
  
 
-  DoubleSolenoid intake = new DoubleSolenoid(3, 4);
-  DoubleSolenoid release = new DoubleSolenoid(5, 2);
+  DoubleSolenoid intake = new DoubleSolenoid(2, 3);
+  DoubleSolenoid release = new DoubleSolenoid(4, 5);
   DoubleSolenoid driveshift = new DoubleSolenoid(6, 7);
 
   public void IntakeOut(){
