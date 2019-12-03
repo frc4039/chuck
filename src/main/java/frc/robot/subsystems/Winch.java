@@ -24,7 +24,11 @@ public class Winch extends Subsystem {
   public void Winch(){
     Winch1.set(0.1);
     Winch2.set(0.1);
-
+  }
+  
+  public void Stop(){
+    Winch1.set(0);
+    Winch2.set(0);
   }
   @Override
   public void initDefaultCommand() {

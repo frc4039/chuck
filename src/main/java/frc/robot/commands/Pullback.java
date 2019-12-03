@@ -11,11 +11,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.subsystems.Winch;
 import frc.robot.subsystems.driveTrain;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 public class Pullback extends Command {
 
   public static OI oi = new OI();
   public static Winch Winch = new Winch();
+  private static DigitalInput Limitswitch = new DigitalInput(0);
 
   public Pullback() {
     // Use requires() here to declare subsystem dependencies
@@ -37,17 +39,23 @@ public class Pullback extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    if (!Limitswitch.get()){
+      return true;      
+    } else{
+      return false;
+    }
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Winch.Stop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Winch.Stop();
   }
 }
